@@ -1,0 +1,21 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+*.egg-info/
+
+# data, features and outputs
+data/
+TTS-Outputs/
+TTS-Speech-Features/
+Text-Features/
+Alignment-Analysis/
+Prosody-Axes/
+sick_filtered_subset/
+sick_relatedness_analysis/
+checkpoints/
+*.safetensors
+*.wav
+*.parquet
+manifest_*.jsonl
+errors_*.jsonl
