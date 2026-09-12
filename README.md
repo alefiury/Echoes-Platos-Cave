@@ -77,8 +77,8 @@ depend on the individual TTS and evaluation systems, each with its own installat
 | | `transformers` | [Qwen3-ASR](https://huggingface.co/Qwen/Qwen3-ASR-1.7B), [Whisper Large V3](https://huggingface.co/openai/whisper-large-v3) |
 | Synthesis | `indextts` | [index-tts/index-tts](https://github.com/index-tts/index-tts) |
 | | `omnivoice` | [k2-fsa/OmniVoice](https://github.com/k2-fsa/OmniVoice) |
-| | `qwen_tts`, `faster_qwen3_tts` | [QwenLM/Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) |
-| | `voxcpm` | [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM) |
+| | `qwen3_tts`, `faster_qwen3_tts` | [QwenLM/Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS), [Faster-Qwen3-TTS](https://github.com/andimarafioti/faster-qwen3-tts) |
+| | `voxcpm2` | [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM) |
 | Calibration | `calibrated-similarity` | [mlbio-epfl/Aristotelian](https://github.com/mlbio-epfl/Aristotelian) |
 | Prosody | `swift-f0`, `praat-parselmouth` | [SwiftF0](https://github.com/lars76/swift-f0/), [Praat-Parselmouth](https://github.com/YannickJadoul/Parselmouth) |
 
@@ -276,7 +276,7 @@ authors and maintainers.
 
 | System | Links |
 |---|---|
-| **IndexTTS2** | [GitHub](https://github.com/index-tts/index-tts) |
+| **IndexTTS2** | [GitHub](https://github.com/index-tts/index-tts) · [HF `IndexTeam/IndexTTS-2`](https://huggingface.co/IndexTeam/IndexTTS-2) |
 | **OmniVoice** | [GitHub](https://github.com/k2-fsa/OmniVoice) · [HF `k2-fsa/OmniVoice`](https://huggingface.co/k2-fsa/OmniVoice) |
 | **Qwen3-TTS** | [GitHub](https://github.com/QwenLM/Qwen3-TTS) · [HF `Qwen/Qwen3-TTS-12Hz-1.7B-Base`](https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base) |
 | **VoxCPM2** | [GitHub](https://github.com/OpenBMB/VoxCPM) · [HF `openbmb/VoxCPM2`](https://huggingface.co/openbmb/VoxCPM2) |
