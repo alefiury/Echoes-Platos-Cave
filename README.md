@@ -80,7 +80,7 @@ depend on the individual TTS and evaluation systems, each with its own installat
 | | `qwen_tts`, `faster_qwen3_tts` | [QwenLM/Qwen3-TTS](https://github.com/QwenLM/Qwen3-TTS) |
 | | `voxcpm` | [OpenBMB/VoxCPM](https://github.com/OpenBMB/VoxCPM) |
 | Calibration | `calibrated-similarity` | [mlbio-epfl/Aristotelian](https://github.com/mlbio-epfl/Aristotelian) |
-| Prosody | `swift-f0`, `praat-parselmouth` | — |
+| Prosody | `swift-f0`, `praat-parselmouth` | [SwiftF0](https://github.com/lars76/swift-f0/), [Praat-Parselmouth](https://github.com/YannickJadoul/Parselmouth) |
 
 ## Quick start: use the released corpus
 
@@ -265,7 +265,7 @@ authors and maintainers.
 | Resource | Role in this work | Links |
 |---|---|---|
 | **SICK** — Sentences Involving Compositional Knowledge (Marelli et al., LREC 2014) | Source of the 600 sentences and 300 relatedness-annotated pairs | [Zenodo](https://zenodo.org/records/2787612) · [HF `RobZamp/sick`](https://huggingface.co/datasets/RobZamp/sick) · [paper](https://aclanthology.org/L14-1314/) |
-| **RAVDESS** — Ryerson Audio-Visual Database of Emotional Speech and Song (Livingstone & Russo, *PLoS ONE* 2018) | Source of the 24 emotional reference prompts (6 speakers x 4 emotions) | [Zenodo](https://zenodo.org/records/1188976) · [SMART Lab](https://sites.psychlabs.ryerson.ca/smartlab/resources/speech-song-database-ravdess/) · [paper](https://doi.org/10.1371/journal.pone.0196391) |
+| **RAVDESS** — Ryerson Audio-Visual Database of Emotional Speech and Song (Livingstone & Russo, *PLoS ONE* 2018) | Source of the 24 emotional reference prompts (6 speakers x 4 emotions) | [Zenodo](https://zenodo.org/records/1188976) · [paper](https://doi.org/10.1371/journal.pone.0196391) |
 
 > [!NOTE]
 > SICK is distributed under CC BY-NC-SA 3.0 and RAVDESS under CC BY-NC-SA 4.0 (commercial use of RAVDESS
