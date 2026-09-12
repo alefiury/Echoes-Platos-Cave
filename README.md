@@ -1,6 +1,6 @@
 # Echoes in Plato's Cave
 
-Official repository for **Echoes in Plato's Cave: Measuring Global and Local Alignment Between Speech and Language Representations**, accepted as an **Oral** presentation at the Speech and Audio Language Models Workshop (SALMA 2026), co-located with EMNLP 2026.
+Official repository for **Echoes in Plato's Cave: Measuring Global and Local Alignment Between Speech and Language Representations**, accepted as an **oral presentation** at the Speech and Audio Language Models Workshop (SALMA 2026), co-located with EMNLP 2026.
 
 [![Paper](https://img.shields.io/badge/paper-coming%20soon-lightgrey)](#citation)
 [![Corpus](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-Echos--Platos--Cave-yellow)](https://huggingface.co/datasets/alefiury/Echos-Platos-Cave)
