@@ -270,7 +270,7 @@ authors and maintainers.
 > [!NOTE]
 > SICK is distributed under CC BY-NC-SA 3.0 and RAVDESS under CC BY-NC-SA 4.0 (commercial use of RAVDESS
 > requires a separate license from its authors). Both are non-commercial — please respect these terms when
-> using the derived corpus; see [License](#license).
+> using the derived corpus. See [License](#license).
 
 ### Speech synthesis
 
@@ -323,10 +323,6 @@ authors and maintainers.
   year      = {2026}
 }
 ```
-
-If you use this corpus or code, please **also cite the underlying resources** listed under
-[Acknowledgements](#acknowledgements) — in particular SICK, RAVDESS, emotion2vec, the calibration framework,
-and the TTS/ASR systems you actually run.
 
 ## License
 
