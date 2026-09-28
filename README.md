@@ -1,6 +1,6 @@
 # Echoes in Plato's Cave
 
-Official repository for **Echoes in Plato's Cave: Measuring Global and Local Alignment Between Speech and Language Representations**, accepted as an **oral presentation** at the Speech and Audio Language Models Workshop (SALMA 2026), co-located with EMNLP 2026.
+Official repository for **Echoes in Plato's Cave: Measuring Global and Local Alignment Between Speech and Language Representations**, accepted as an **oral presentation** at the Speech and Audio Language Models Workshop (SALMA 2026), co-located with **EMNLP 2026**.
 
 [![Paper](https://img.shields.io/badge/paper-coming%20soon-lightgrey)](#citation)
 [![Corpus](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-Echos--Platos--Cave-yellow)](https://huggingface.co/datasets/alefiury/Echos-Platos-Cave)
@@ -28,7 +28,7 @@ aggregation-aware permutation procedure.
 | | |
 |---|---|
 | Paper | *link to be added* |
-| Corpus | [`alefiury/Echos-Platos-Cave`](https://huggingface.co/datasets/alefiury/Echos-Platos-Cave) — 14,400 selected utterances plus all 57,600 candidates, with emotion and ASR scores |
+| Corpus | [`alefiury/Echos-Platos-Cave`](https://huggingface.co/datasets/alefiury/Echos-Platos-Cave). 14,400 selected utterances plus all 57,600 candidates, with emotion and ASR scores |
 
 ## Contents
 
@@ -96,8 +96,8 @@ The scripts below expect the audio **on disk** in the layout
 TTS-Outputs/<tts_model>/<speaker_id>/<emotion>/<sentence_id>.wav
 ```
 
-which is the `relative_path` column of the dataset. The two metadata tables used by the analysis —
-`best_available_emotion_samples.csv` (the selection table) and `sick_selected_pairs.csv` — ship in the
+which is the `relative_path` column of the dataset. The two metadata tables used by the analysis,
+`best_available_emotion_samples.csv` (the selection table) and `sick_selected_pairs.csv`, ship in the
 dataset's `metadata/` folder.
 
 Then continue with [Feature extraction](#feature-extraction) → [Analysis](#analysis).
@@ -105,7 +105,7 @@ Then continue with [Feature extraction](#feature-extraction) → [Analysis](#ana
 ## Building the corpus from scratch
 
 <details>
-<summary><b>Step 1 — Sentences</b>: select 600 SICK sentences across three relatedness bands</summary>
+<summary><b>Step 1: Sentences</b>: select 600 SICK sentences across three relatedness bands</summary>
 
 ```bash
 cd corpus/1_select_sentences
@@ -122,7 +122,7 @@ Outputs: `sick_unique_sentences.csv` (600 sentences) and `sick_selected_pairs.cs
 </details>
 
 <details>
-<summary><b>Step 2 — Reference prompts</b>: pick 24 RAVDESS recordings (6 speakers x 4 emotions)</summary>
+<summary><b>Step 2: Reference prompts</b>: pick 24 RAVDESS recordings (6 speakers x 4 emotions)</summary>
 
 ```bash
 python corpus/2_select_prompts/build_prompt_map.py \
@@ -137,7 +137,7 @@ the RAVDESS label, and retains one recording per speaker and emotion by intensit
 </details>
 
 <details>
-<summary><b>Step 3 — Synthesis</b>: 600 sentences x 24 prompts x 4 TTS systems</summary>
+<summary><b>Step 3: Synthesis</b>: 600 sentences x 24 prompts x 4 TTS systems</summary>
 
 Each script renders all 600 sentences under all 24 prompts and writes
 `<output-dir>/<speaker>/<emotion>/<sentence_id>.wav`.
@@ -168,7 +168,7 @@ python corpus/3_synthesize/voxcpm2_synth.py \
 </details>
 
 <details>
-<summary><b>Step 4 — Candidate selection</b>: score every candidate, keep one per (sentence, speaker, emotion)</summary>
+<summary><b>Step 4: Candidate selection</b>: score every candidate, keep one per (sentence, speaker, emotion)</summary>
 
 ```bash
 for tts in IndexTTS2 OmniVoice Qwen3-TTS VoxCPM2; do
@@ -188,10 +188,10 @@ target-emotion agreement, target-emotion confidence, mean WER, mean CER, and a f
 ## Feature extraction
 
 Both extractors save one `.safetensors` file per input with a `hidden_states` tensor of shape
-`[layers, tokens_or_frames, dim]` — padding removed, layer 0 being the embedding or front-end output.
+`[layers, tokens_or_frames, dim]`, padding removed, layer 0 being the embedding or front-end output.
 Pooling is deferred to the analysis script.
 
-**Speech** — one run per encoder:
+**Speech** - One run per encoder:
 
 ```bash
 python features/extract_speech_features.py \
@@ -201,7 +201,7 @@ python features/extract_speech_features.py \
 > Aliases: `wav2vec2-base`, `wav2vec2-large`, `hubert-large-ll60k`, `hubert-xlarge-ll60k`,
 > `wavlm-base-plus`, `wavlm-large`, `whisper-small`, `whisper-medium`, `whisper-large-v3`
 
-**Text** — one run per encoder:
+**Text** - One run per encoder:
 
 ```bash
 python features/extract_text_features.py \
@@ -263,12 +263,12 @@ authors and maintainers.
 
 | Resource | Role in this work | Links |
 |---|---|---|
-| **SICK** — Sentences Involving Compositional Knowledge (Marelli et al., LREC 2014) | Source of the 600 sentences and 300 relatedness-annotated pairs | [Zenodo](https://zenodo.org/records/2787612) · [HF `RobZamp/sick`](https://huggingface.co/datasets/RobZamp/sick) · [paper](https://aclanthology.org/L14-1314/) |
-| **RAVDESS** — Ryerson Audio-Visual Database of Emotional Speech and Song (Livingstone & Russo, *PLoS ONE* 2018) | Source of the 24 emotional reference prompts (6 speakers x 4 emotions) | [Zenodo](https://zenodo.org/records/1188976) · [paper](https://doi.org/10.1371/journal.pone.0196391) |
+| **SICK**: Sentences Involving Compositional Knowledge (Marelli et al., LREC 2014) | Source of the 600 sentences and 300 relatedness-annotated pairs | [Zenodo](https://zenodo.org/records/2787612) · [HF `RobZamp/sick`](https://huggingface.co/datasets/RobZamp/sick) · [paper](https://aclanthology.org/L14-1314/) |
+| **RAVDESS**: Ryerson Audio-Visual Database of Emotional Speech and Song (Livingstone & Russo, *PLoS ONE* 2018) | Source of the 24 emotional reference prompts (6 speakers x 4 emotions) | [Zenodo](https://zenodo.org/records/1188976) · [paper](https://doi.org/10.1371/journal.pone.0196391) |
 
 > [!NOTE]
 > SICK is distributed under CC BY-NC-SA 3.0 and RAVDESS under CC BY-NC-SA 4.0 (commercial use of RAVDESS
-> requires a separate license from its authors). Both are non-commercial — please respect these terms when
+> requires a separate license from its authors). Both are non-commercial. Please respect these terms when
 > using the derived corpus. See [License](#license).
 
 ### Speech synthesis
@@ -291,23 +291,23 @@ authors and maintainers.
 
 ### Encoders under study
 
-**Speech** — [wav2vec 2.0](https://huggingface.co/facebook/wav2vec2-large) (Baevski et al., 2020),
+**Speech**: [wav2vec 2.0](https://huggingface.co/facebook/wav2vec2-large) (Baevski et al., 2020),
 [HuBERT](https://huggingface.co/facebook/hubert-large-ll60k) (Hsu et al., 2021),
 [WavLM](https://huggingface.co/microsoft/wavlm-large) (Chen et al., 2022),
 [Whisper](https://huggingface.co/openai/whisper-large-v3) (Radford et al., 2023).
 
-**Text** — [BERT](https://huggingface.co/google-bert/bert-large-uncased) (Devlin et al., 2019),
+**Text**: [BERT](https://huggingface.co/google-bert/bert-large-uncased) (Devlin et al., 2019),
 [E5](https://huggingface.co/intfloat/e5-large-v2) (Wang et al., 2022),
 [GTE v1.5](https://huggingface.co/Alibaba-NLP/gte-large-en-v1.5) (Li et al., 2023),
 [Qwen3-Embedding](https://huggingface.co/Qwen/Qwen3-Embedding-8B).
 
 ### Methods and tooling
 
-- **Aggregation-aware permutation calibration** — Gröger et al. (2026),
+- **Aggregation-aware permutation calibration**: Gröger et al. (2026),
   [`calibrated-similarity` / Aristotelian](https://github.com/mlbio-epfl/Aristotelian).
 - **Alignment metrics** build on prior work on mutual kNN and CKNNA alignment
   ([Huh et al., 2024](https://arxiv.org/abs/2405.07987)) and CKA ([Kornblith et al., 2019](https://arxiv.org/abs/1905.00414)).
-- **Infrastructure** — [PyTorch](https://pytorch.org), [Hugging Face Transformers / Datasets / Hub](https://huggingface.co),
+- **Infrastructure**: [PyTorch](https://pytorch.org), [Hugging Face Transformers / Datasets / Hub](https://huggingface.co),
   [safetensors](https://github.com/huggingface/safetensors), [jiwer](https://github.com/jitsi/jiwer),
   [SwiftF0](https://github.com/lars76/swift-f0), [Parselmouth / Praat](https://github.com/YannickJadoul/Parselmouth),
   NumPy, SciPy, scikit-learn, pandas, Matplotlib and seaborn.
@@ -325,5 +325,5 @@ authors and maintainers.
 
 ## License
 
-- **Code** — [MIT License](LICENSE).
-- **Corpus** — derived from SICK and RAVDESS, released under **CC BY-NC 4.0**.
+- **Code** - [MIT License](LICENSE).
+- **Corpus** - derived from SICK and RAVDESS, released under **CC BY-NC 4.0**.
