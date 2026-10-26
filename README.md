@@ -3,16 +3,18 @@
 Official repository for **Echoes in Plato's Cave: Measuring Global and Local Alignment Between Speech and Language Representations**, accepted as an **oral presentation** at the Speech and Audio Language Models Workshop (SALMA 2026), co-located with **EMNLP 2026**.
 
 [![Paper](https://img.shields.io/badge/Paper-EMNLP%202026%20%7C%20SALMA-blue)](https://aclanthology.org/2026.salma-1.10/)
-[![Corpus](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-Echos--Platos--Cave-yellow)](https://huggingface.co/datasets/alefiury/Echos-Platos-Cave)
+[![Corpus](https://img.shields.io/badge/%F0%9F%A4%97%20dataset-SICK--EmoSpeech-yellow)](https://huggingface.co/datasets/alefiury/Echoes-Platos-Cave)
 [![License: MIT](https://img.shields.io/badge/code%20license-MIT-blue)](LICENSE)
 
 ---
 
 ## Overview
 
-Do speech encoders and text encoders converge on the same representational geometry? We test this on a
-controlled corpus where **the same 600 sentences are rendered by 6 speakers x 4 emotions**, so lexical
-content is held fixed while acoustic variation is manipulated. We compare **every layer pair** between
+Do speech encoders and text encoders converge on the same representational geometry? We test this using
+[**SICK-EmoSpeech**](https://huggingface.co/datasets/alefiury/Echoes-Platos-Cave), a controlled synthetic speech corpus where the same **600 SICK sentences** are rendered
+across **6 speakers x 4 target emotions** using four zero-shot TTS systems. From the resulting **57,600
+candidates**, one utterance is selected for each (sentence, speaker, emotion) condition, yielding **14,400
+utterances** while holding linguistic content fixed and varying speaker identity and prosody. We compare **every layer pair** between
 **9 speech encoders** and **10 text encoders**, and calibrate the strongest match with an
 aggregation-aware permutation procedure.
 
@@ -28,7 +30,7 @@ aggregation-aware permutation procedure.
 | | |
 |---|---|
 | Paper | [SALMA \| EMNLP 2026](https://aclanthology.org/2026.salma-1.10) |
-| Corpus | [`alefiury/Echos-Platos-Cave`](https://huggingface.co/datasets/alefiury/Echos-Platos-Cave). 14,400 selected utterances plus all 57,600 candidates, with emotion and ASR scores |
+| Corpus | [`alefiury/Echoes-Platos-Cave`](https://huggingface.co/datasets/alefiury/Echoes-Platos-Cave) (**SICK-EmoSpeech**). 14,400 selected utterances plus all 57,600 candidates |
 
 ## Contents
 
@@ -86,8 +88,8 @@ depend on the individual TTS and evaluation systems, each with its own installat
 ```python
 from datasets import load_dataset
 
-ds    = load_dataset("alefiury/Echos-Platos-Cave", "filtered",       split="train")  # 14,400 selected utterances
-cands = load_dataset("alefiury/Echos-Platos-Cave", "all_candidates", split="train")  # 57,600 candidates
+ds    = load_dataset("alefiury/Echoes-Platos-Cave", "filtered",       split="train")  # 14,400 selected utterances
+cands = load_dataset("alefiury/Echoes-Platos-Cave", "all_candidates", split="train")  # 57,600 candidates
 ```
 
 The scripts below expect the audio **on disk** in the layout
