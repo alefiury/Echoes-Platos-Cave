@@ -27,7 +27,7 @@ aggregation-aware permutation procedure.
 
 | | |
 |---|---|
-| Paper | [SALMA | EMNLP 2026](https://aclanthology.org/2026.salma-1.10). |
+| Paper | [SALMA \| EMNLP 2026](https://aclanthology.org/2026.salma-1.10) |
 | Corpus | [`alefiury/Echos-Platos-Cave`](https://huggingface.co/datasets/alefiury/Echos-Platos-Cave). 14,400 selected utterances plus all 57,600 candidates, with emotion and ASR scores |
 
 ## Contents
