@@ -316,12 +316,19 @@ authors and maintainers.
 
 ```bibtex
 @inproceedings{ferreira-etal-2026-echoes,
-  title     = {Echoes in Plato's Cave: Measuring Global and Local Alignment Between Speech and Language Representations},
-  author    = {Ferreira, Alef Iury Siqueira and Stefanel Gris, Lucas Rafael and de Oliveira, F. S. and Galvão Filho, Arlindo Rodrigues and Soares, Anderson Da Silva},
-  booktitle = {Proceedings of the 2nd Speech and Audio Language Models Workshop (SALMA)},
-  year      = {2026},
-  pages     = {134--155},
-  url       = {https://aclanthology.org/2026.salma-1.10/}
+  title = {Echoes in Plato{'}s Cave: Measuring Global and Local Alignment Between Speech and Language Representations},
+  author = {Ferreira, Alef Iury Siqueira and
+            Stefanel Gris, Lucas Rafael and
+            de Oliveira, F S and
+            Galv{\~a}o Filho, Arlindo Rodrigues and
+            Soares, Anderson Da Silva},
+  booktitle = {The Proceedings of Speech and Audio Language Models Workshop (2nd Edition)},
+  month = oct,
+  year = {2026},
+  publisher = {Association for Computational Linguistics},
+  pages = {134--155},
+  ISBN = {979-8-89176-496-5},
+  url = {https://aclanthology.org/2026.salma-1.10/}
 }
 ```
 
