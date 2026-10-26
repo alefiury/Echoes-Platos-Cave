@@ -116,8 +116,9 @@ python filter_sick.py                   # writes sick_filtered_subset/
 ```
 
 `filter_sick.py` pools the SICK splits, removes pairs with fewer than 4 or more than 30 words, questions,
-exclamations, URLs and HTML, splits the rest into **low** (<= 2.3), **medium** (3.0-3.7) and **high**
-(>= 4.2) relatedness bands, and samples 100 sentence-disjoint pairs per band.
+exclamations, URLs and HTML, and drops identical and reversed-duplicate pairs. It splits the remainder into
+**low** (<= 2.3), **medium** (3.0-3.7) and **high** (>= 4.2) relatedness bands, and samples 100 pairs per
+band while ensuring that no sentence appears in more than one selected pair.
 
 Outputs: `sick_unique_sentences.csv` (600 sentences) and `sick_selected_pairs.csv` (300 pairs).
 
@@ -132,7 +133,7 @@ python corpus/2_select_prompts/build_prompt_map.py \
     --output-csv filtered_ravdess_prompts_metadata.csv
 ```
 
-Randomly selects three male and three female actors, keeps neutral / happy / sad / angry recordings of the
+Uses three female and three male RAVDESS actors (IDs **4, 6, 8, 11, 15, 21**), randomly selected, three male and three female actors, keeps neutral / happy / sad / angry recordings of the
 statement *"Dogs are sitting by the door"*, discards recordings whose emotion2vec+ prediction disagrees with
 the RAVDESS label, and retains one recording per speaker and emotion by intensity, then classifier confidence.
 
